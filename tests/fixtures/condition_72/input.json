@@ -1,0 +1,76 @@
+{
+    "activities": [
+        {
+            "date": "2012-04-24",
+            "duration": 35
+        },
+        {
+            "date": "2012-04-23",
+            "duration": 35
+        },
+        {
+            "date": "2012-04-22",
+            "duration": 35
+        }
+    ],
+    "bloodPressures": [
+        {
+            "date": "2012-04-24",
+            "diastolic": 80,
+            "systolic": 100
+        },
+        {
+            "date": "2012-04-23",
+            "diastolic": 80,
+            "systolic": 100
+        },
+        {
+            "date": "2012-04-22",
+            "diastolic": 80,
+            "systolic": 100
+        }
+    ],
+    "heartBeats": [
+        
+        {
+            "count": 100,
+            "date": "2012-04-23"
+        },
+        {
+            "count": 90,
+            "date": "2012-04-22"
+        }
+    ],
+    "sleep": [
+        {
+            "date": "2012-04-24",
+            "minutesAsleep": 710
+        },
+        {
+            "date": "2012-04-23",
+            "minutesAsleep": 800
+        },
+        {
+            "date": "2012-04-22",
+            "minutesAsleep": 750
+        }
+    ],
+    "userinfo": {
+        "age": 45,
+        "cardio": true,
+        "diabetes": true,
+        "gender": "male",
+        "height": 175,
+        "hypertension": true,
+        "insomnia": true,
+        "weight": [
+            
+            {
+                "date": "2012-04-23",
+                "value": 40
+            }
+            
+        ]
+    }
+}
+

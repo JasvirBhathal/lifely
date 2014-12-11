@@ -1,0 +1,17 @@
+1,input,age,gender,fluctuation,gradient,more then,less then,condition,severity,category
+2,bloodpressure,,,,,0,70,Severly Low Blood Pressure,2,bloodpressure_too_low
+3,bloodpressure,,,,,69,90,Low Blood Pressure,2,bloodpressure_low
+4,bloodpressure,,,,,89,120,Ideal Blood Pressure,1,bloodpressure_ideal
+5,bloodpressure,,,,,119,140,Pre-High Blood Pressure,2,bloodpressure_pre_high
+6,bloodpressure,,,,,139,160,High Blood Pressure (Stage 1),2,bloodpressure_high_1
+7,bloodpressure,,,,,159,180,High Blood Pressure (Stage 2),2,bloodpressure_high_2
+8,bloodpressure,,,,,179,250,Too High Blood Pressure - Emergency care needed,2,bloodpressure_high
+9,pulse,,,,,0,60,Heartbeat rate is low,2,heartbeat_low
+10,pulse,,,,,59,100,Heartbeat rate is normal,0,heartbeat_normal
+11,pulse,,,,,99,200,Heartbeat rate is high,2,heartbeat_high
+12,activity,,,,,0,30,activities low,0,activity_low
+13,activity,,,,,29,80,activities normal,0,activity_normal
+14,activity,,,,,79,150,activities high,0,activity_high
+15,sleep,,,,,0,350,Less sleep,0,sleep_low
+16,sleep,,,,,349,500,normal sleep,0,sleep_normal
+17,sleep,,,,,499,900,Too much sleep,0,sleep_high
