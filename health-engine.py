@@ -68,7 +68,7 @@ def crossdomain(origin=None, methods=None, headers=None,
 def recommend():
 
      try:
-         inputs = json.loads(request.args['data'])
+         inputs = json.loads(request.data)
      except ValueError:
          return "Unable to parse input data", 400
           
