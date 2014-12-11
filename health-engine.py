@@ -8,10 +8,10 @@ from StringIO import StringIO
 from flask import Flask
 from flask import request
 import recommender
-from flask.ext.cors import CORS
+# from flask.ext.cors import CORS
 
 app = Flask(__name__)
-cors = CORS(app)
+# cors = CORS(app)
 app.debug = True
 
 
