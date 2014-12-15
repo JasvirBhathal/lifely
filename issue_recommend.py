@@ -5,8 +5,9 @@ import datetime
 import math
 import pandas
 import stats
+import time
 
-table = pandas.read_csv("db/data.csv", dtype={'age': object, 'gender': object})
+table = pandas.read_csv("db/issues.csv", dtype={'age': object, 'gender': object})
 table[['age', 'gender']] = table[['age', 'gender']].astype(str)
 
 def process(inputs):
@@ -15,40 +16,49 @@ def process(inputs):
     recommendations = []
     
     features = _build_features(inputs)
+    dates = _build_dates(inputs)
 
     age = None
     gender = None
+    pills = None
 
     if 'userinfo' in inputs:
-        age = inputs['userinfo']['age']
-        gender = inputs['userinfo']['gender']
+       age = inputs['userinfo']['age']
+       gender = inputs['userinfo']['gender']
+       pills = inputs['userinfo']['pills']
     
     for _recommendation in table.iterrows():
         recommendation = _recommendation[1]
-        days = int(recommendation['days'])
+        # days = int(recommendation['days'])
         feature = recommendation['input'] # use only the last n days
-        values = features[feature][-days:]
-        
-        conditions = [
-            _satisfiesFluctuation(values, recommendation['fluctuation']),
-            _satisfiesGradient(values, recommendation['gradient']),
-            _satisfiesAllLess(values, recommendation['all less']),
-            _satisfiesAllMore(values, recommendation['all more']),
-            _satisfiesAvgLess(values, recommendation['avg less']),
-            _satisfiesAvgMore(values, recommendation['avg more']),
-            _satisfiesAge(age, recommendation['age']),
-            _satisfiesGender(gender, recommendation['gender'])
-        ]
-        
-        if all(conditions):
-            recommendations.append(_recommendation_output(recommendation))
+        # values = features[feature][-days:]
+        values = features[feature]
+        days = dates[feature]
+        for index in range(len(values)):
+            value = values[index:index+1]
+            date = days[index:index+1]
+            conditions = [
+				# _satisfiesFluctuation(values, recommendation['fluctuation']),
+				# _satisfiesGradient(values, recommendation['gradient']),
+				_satisfiesLessThen(value, recommendation['less then']),
+				_satisfiesMoreThen(value, recommendation['more then']),
+				# _satisfiesAvgLess(values, recommendation['avg less']),
+				# _satisfiesAvgMore(values, recommendation['avg more']),
+				# _satisfiesAge(age, recommendation['age']),
+				# _satisfiesGender(gender, recommendation['gender'])
+			]
+            if all(conditions):
+                recommendations.append(_recommendation_output(recommendation, date, feature, pills))
     return recommendations
-    
-def _recommendation_output(recommendation):
+
+def _recommendation_output(recommendation, date, feature, pills):
     """ Take in a pandas row and return the format for the output recommendation 
     """
     return {
-        'type': 'trend',
+        'type': 'today',
+		'feature': feature,
+        'pills' : pills,
+        'date' : date[0],
         'category': recommendation['category'],
         'condition': recommendation['condition'],
         'severity' : recommendation['severity']
@@ -66,13 +76,13 @@ def _satisfiesGradient(input_val, gradient):
     # gradient using linear regression
     return True
     
-def _satisfiesAllLess(input_val, all_less):
-    if math.isnan(all_less): return True
-    return all([value < all_less for value in input_val])
+def _satisfiesLessThen(input_val, less_then):
+    if math.isnan(less_then): return True
+    return all([value < less_then for value in input_val])
     
-def _satisfiesAllMore(input_val, all_more):
-    if math.isnan(all_more): return True
-    return all([value > all_more for value in input_val])
+def _satisfiesMoreThen(input_val, more_then):
+    if math.isnan(more_then): return True
+    return all([value > more_then for value in input_val])
     
 def _satisfiesAvgLess(input_val, avg_less):
     if math.isnan(avg_less): return True
@@ -113,20 +123,47 @@ def _build_features(inputs):
     if "bloodPressures" in inputs:
         bp_systolic = [bp["systolic"] for bp in inputs["bloodPressures"]]
         bp_disastolic = [bp["diastolic"] for bp in inputs["bloodPressures"]]
+        bp_date = [bp["date"] for bp in inputs["bloodPressures"]]
 
     if "heartBeats" in inputs:
         pulse = [value["count"] for value in inputs["heartBeats"]]
-        
+        pulse_date = [bp["date"] for bp in inputs["heartBeats"]]
+
     if "activities" in inputs:
         activity = [value["duration"] for value in inputs["activities"]]
+        activity_date = [bp["date"] for bp in inputs["activities"]]
         
     if "sleep" in inputs:
         sleep = [value["minutesAsleep"] for value in inputs["sleep"]]
+        sleep_date = [bp["date"] for bp in inputs["sleep"]]
     
     features = {
         'bloodpressure': bp_systolic,
         'pulse': pulse,
         'activity': activity,
-        'sleep': sleep
+        'sleep': sleep,
     }
     return features
+
+def _build_dates(inputs):
+    bp_date = pulse_date = activity_date = sleep_date = []
+
+    if "bloodPressures" in inputs:
+        bp_date = [bp["date"] for bp in inputs["bloodPressures"]]
+
+    if "heartBeats" in inputs:
+        pulse_date = [bp["date"] for bp in inputs["heartBeats"]]
+
+    if "activities" in inputs:
+        activity_date = [bp["date"] for bp in inputs["activities"]]
+        
+    if "sleep" in inputs:
+        sleep_date = [bp["date"] for bp in inputs["sleep"]]
+    
+    dates = {
+        'bloodpressure': bp_date,
+        'pulse': pulse_date,
+        'activity': activity_date,
+        'sleep': sleep_date,
+    }
+    return dates

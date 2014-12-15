@@ -7,8 +7,12 @@ temporily comment the instance_recommendations out for testing
 
 import issue_checker
 import issue_picker
+import issue_recommend
 
 def recommend(input):
-    issues = issue_checker.process(input)
+    issues = issue_recommend.process(input)
     suggestions = issue_picker.process(issues)
+    recommend = issue_checker.process(input)
+    recommendations = issue_picker.category(recommend)
+    suggestions.extend(recommendations)
     return suggestions

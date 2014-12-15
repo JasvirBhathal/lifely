@@ -12,8 +12,17 @@ def process(issues):
     # top_issues = [highest_severity_issue(issues) 
                   # for category, issues in issues_by_category.items()]
     top_issues = [issue for issue in issues
-                  if issue['severity'] == 2 or issue['severity'] == 1]
+                  if issue['severity'] != 0]
     
+    return top_issues
+
+def category(issues):
+    issues_by_category = defaultdict(list)
+    for issue in issues:
+        issues_by_category[issue['category']].append(issue)
+    # select issues with highest priority
+    top_issues = [highest_severity_issue(issues) 
+                  for category, issues in issues_by_category.items()]
     return top_issues
     
 def highest_severity_issue(issues):
