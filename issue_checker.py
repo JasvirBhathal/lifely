@@ -41,13 +41,14 @@ def process(inputs):
         ]
         
         if all(conditions):
-            recommendations.append(_recommendation_output(recommendation))
+            recommendations.append(_recommendation_output(recommendation, feature))
     return recommendations
     
-def _recommendation_output(recommendation):
+def _recommendation_output(recommendation, feature):
     """ Take in a pandas row and return the format for the output recommendation 
     """
     return {
+	    'feature': feature,
         'type': 'trend',
         'category': recommendation['category'],
         'condition': recommendation['condition'],

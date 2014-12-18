@@ -1,10 +1,10 @@
 id,input,age,gender,days,fluctuation,gradient,all less,all more,avg less,avg more,condition,severity,category
-1,bloodpressure,,,3,2,,,,,,Blood pressure fluctuates in the last 3 days,1,bloodpressure_irregular
-2,bloodpressure,,,5,3,,,,,,Blood pressure fluctuates in the last 5 days,2,bloodpressure_irregular
-3,bloodpressure,,,7,5,,,,,,Blood pressure fluctuates in the last the last week,3,bloodpressure_irregular
-4,bloodpressure,,,3,,,,130,,,Blood pressure kept higher than 130 in the last 3 days,1,bloodpressure_high
-5,bloodpressure,,,5,,,,130,,,Blood pressure kept higher than 130 in the last 5 days,2,bloodpressure_high
-6,bloodpressure,,,7,,,,130,,,Blood pressure kept higher than 130 in the last week,3,bloodpressure_high
+1,bloodpressure,,,3,2,,,,,,Your Blood pressure fluctuates in the last 3 days,1,bloodpressure_irregular
+2,bloodpressure,,,5,3,,,,,,Your Blood pressure fluctuates in the last 5 days,2,bloodpressure_irregular
+3,bloodpressure,,,7,5,,,,,,Your Blood pressure fluctuates in the last the last week,3,bloodpressure_irregular
+4,bloodpressure,,,3,,,,130,,,Your Blood pressure was higher than 130 in the last 3 days,1,bloodpressure_high
+5,bloodpressure,,,5,,,,130,,,Your Blood pressure was higher than 130 in the last 5 days,2,bloodpressure_high
+6,bloodpressure,,,7,,,,130,,,Your Blood pressure was higher than 130 in the last week,3,bloodpressure_high
 7,bloodpressure,,,3,,,80,,,,Blood pressure kept lower than 80 in the last 3 days,1,bloodpressure_low
 8,bloodpressure,,,5,,,80,,,,Blood pressure kept lower than 80 in the last 5 days,2,bloodpressure_low
 9,bloodpressure,,,7,,,80,,,,Blood pressure kept lower than 80 in the last week,3,bloodpressure_low
@@ -15,35 +15,35 @@ id,input,age,gender,days,fluctuation,gradient,all less,all more,avg less,avg mor
 14,bloodpressure,,,5,,,,,80,,Average blood pressure was lower than 80 in the last 5 days,2,bloodpressure_low
 15,bloodpressure,,,7,,,,,80,,Average blood pressure was lower than 80 in the last week,3,bloodpressure_low
 16,pulse,,,3,,,55,,,,Heart beat rate was lower than 55 in the last 3 days,1,heartbeat_low
-17,pulse,,,5,,,55,,,,Heart beat rate was lower than 55 in the last 5 days,2,heartbeat_low
-18,pulse,,,7,,,55,,,,Heart beat rate was lower than 55 in the last weeks,3,heartbeat_low
-19,pulse,,,3,,,,135,,,Heart beat rate was higher than 135 in the last 3 days,1,heartbeat_high
-20,pulse,,,5,,,,135,,,Heart beat rate was higher than 135 in the last 5 days,2,heartbeat_high
-21,pulse,,,7,,,,135,,,Heart beat rate was higher than 135 in the last weeks,3,heartbeat_high
-22,pulse,,,3,2,,,,,,Heart beat rate fluctuates in the last 3 days,1,heartbeat_irregular
-23,pulse,,,5,3,,,,,,Heart beat rate fluctuates in the last 5 days,2,heartbeat_irregular
-24,pulse,,,7,5,,,,,,Heart beat rate fluctuates in the last the last week,3,heartbeat_irregular
-25,activity,,,3,2,,,,,,Activities fluctuates in the last 3 days,1,activity_irregular
-26,activity,,,5,3,,,,,,Activities fluctuates in the last 5 days,2,activity_irregular
-27,activity,,,7,5,,,,,,Activities fluctuates in the last week,3,activity_irregular
-28,activity,,,3,,,,180,,,Activities kept higher than 180 in the last 3 days,1,activity_high
-29,activity,,,5,,,,180,,,Activities kept higher than 180 in the last 5 days,2,activity_high
-30,activity,,,7,,,,180,,,Activities kept higher than 180 in the last week,3,activity_high
-31,activity,,,3,,,30,,,,Activities kept lower than 30 in the last 3 days,1,activity_low
-32,activity,,,5,,,30,,,,Activities kept lower than 30 in the last 5 days,2,activity_low
-33,activity,,,7,,,30,,,,Activities kept lower than 30 in the last week,3,activity_low
-34,activity,,,3,,,,,,180,Average activities was higher than 180 in the last 3 days,1,activity_high
-35,activity,,,5,,,,,,180,Average activities was higher than 180 in the last 5 days,2,activity_high
-36,activity,,,7,,,,,,180,Average activities was higher than 180 in the last week,3,activity_high
-37,activity,,,3,,,,,30,,Average activities was lower than 30 in the last 3 days,1,activity_low
-38,activity,,,5,,,,,30,,Average activities was lower than 30 in the last 5 days,2,activity_low
-39,activity,,,7,,,,,30,,Average activities was lower than 30 in the last week,3,activity_low
-40,sleep,,,3,2,,,,,,Irregular sleep in the last 3 days,1,sleep_irregular
-41,sleep,,,5,3,,,,,,Irregular sleep in the last 5 days,2,sleep_irregular
-42,sleep,,,7,5,,,,,,Irregular sleep in the last week,3,sleep_irregular
-43,sleep,,,3,,,,,240,,Not enough sleep in the last 3 days,1,sleep_low
-44,sleep,,,5,,,,,270,,Not enough sleep in the last 5 days,3,sleep_low
-45,sleep,,,7,,,,,300,,Not enough sleep in the last 7 days,5,sleep_low
-46,sleep,,,3,,,,,,720,Too much sleep in the last 3 days,2,sleep_high
-47,sleep,,,5,,,,,,660,Too much sleep in the last 5 days,4,sleep_high
-48,sleep,,,7,,,,,,630,Too much sleep in the last 7 days,1,sleep_high
+17,pulse,,,5,,,55,,,,Your Heart rate was lower than 55 in the last 5 days,2,heartbeat_low
+18,pulse,,,7,,,55,,,,Your Heart rate was lower than 55 in the last weeks,3,heartbeat_low
+19,pulse,,,3,,,,135,,,Your Heart rate was higher than 135 in the last 3 days,1,heartbeat_high
+20,pulse,,,5,,,,135,,,YourHeart rate was higher than 135 in the last 5 days,2,heartbeat_high
+21,pulse,,,7,,,,135,,,Your Heart rate was higher than 135 in the last weeks,3,heartbeat_high
+22,pulse,,,3,2,,,,,,Your Heart rate fluctuates in the last 3 days,1,heartbeat_irregular
+23,pulse,,,5,3,,,,,,Your Heart rate fluctuates in the last 5 days,2,heartbeat_irregular
+24,pulse,,,7,5,,,,,,YourHeart rate fluctuates in the last the last week,3,heartbeat_irregular
+25,activity,,,3,2,,,,,,Your Activities fluctuates in the last 3 days,1,activity_irregular
+26,activity,,,5,3,,,,,,Your Activities fluctuates in the last 5 days,2,activity_irregular
+27,activity,,,7,5,,,,,,Your Activities fluctuates in the last week,3,activity_irregular
+28,activity,,,3,,,,180,,,Your Activities were higher than 180 in the last 3 days,1,activity_high
+29,activity,,,5,,,,180,,,Your Activities were higher than 180 in the last 5 days,2,activity_high
+30,activity,,,7,,,,180,,,Your Activities were higher than 180 in the last week,3,activity_high
+31,activity,,,3,,,30,,,,Your Activities were lower than 30 in the last 3 days,1,activity_low
+32,activity,,,5,,,30,,,,Your Activities were lower than 30 in the last 5 days,2,activity_low
+33,activity,,,7,,,30,,,,Your Activities were lower than 30 in the last week,3,activity_low
+34,activity,,,3,,,,,,180,Your Average activities was higher than 180 in the last 3 days,1,activity_high
+35,activity,,,5,,,,,,180,Your Average activities was higher than 180 in the last 5 days,2,activity_high
+36,activity,,,7,,,,,,180,Your Average activities was higher than 180 in the last week,3,activity_high
+37,activity,,,3,,,,,30,,Your Average activities was lower than 30 in the last 3 days,1,activity_low
+38,activity,,,5,,,,,30,,Your Average activities was lower than 30 in the last 5 days,2,activity_low
+39,activity,,,7,,,,,30,,Your Average activities was lower than 30 in the last week,3,activity_low
+40,sleep,,,3,2,,,,,,You had Irregular sleep in the last 3 days,1,sleep_irregular
+41,sleep,,,5,3,,,,,,You had Irregular sleep in the last 5 days,2,sleep_irregular
+42,sleep,,,7,5,,,,,,You had Irregular sleep in the last week,3,sleep_irregular
+43,sleep,,,3,,,,,240,,You did not have enough sleep in the last 3 days,1,sleep_low
+44,sleep,,,5,,,,,270,,You did not have enough sleep in the last 5 days,3,sleep_low
+45,sleep,,,7,,,,,300,,You did not haveenough sleep in the last 7 days,5,sleep_low
+46,sleep,,,3,,,,,,720,You had Too much sleep in the last 3 days,2,sleep_high
+47,sleep,,,5,,,,,,660,You had Too much sleep in the last 5 days,4,sleep_high
+48,sleep,,,7,,,,,,630,You had Too much sleep in the last 7 days,1,sleep_high
